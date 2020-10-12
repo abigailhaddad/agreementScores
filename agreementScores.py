@@ -20,8 +20,8 @@ def clean(df):
     #we're interested in each combination of people
     for personA in uniqueNames:
         for personB in uniqueNames:
-            #but we don't need to calculate A vs A or both A vs. B and B vs. A
-            if (personA!=personB) and [personA, personB]==sorted([personA, personB]):
+            #but we don't need to calculate A vs A 
+            if (personA!=personB):
                 #keep all matchups judged by A or B
                 keepDF=dfNonBlank.loc[dfNonBlank['Name'].isin([personA, personB])]
                 #just keep the ones that we have two verdicts on (they both judged)
